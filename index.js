@@ -6,7 +6,7 @@ const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 const themeToggle = document.getElementById("theme-toggle");
 
-const apiURL = "https://api.quotable.io/random";
+const apiURL = "http://api.quotable.io/random";
 
 const quoteList = [];
 let currentIndex = -1;
@@ -23,9 +23,9 @@ function updateQuote() {
   }
 }
 
-async function getQoute() {
+async function getQuote() {
   try {
-    btnE1.innerText = "Loading...";
+    btnE1.innerText = "Random";
     btnE1.disabled = true;
     quoteE1.innerText = "Updating...";
     const response = await fetch(`${apiURL}?tags=${quoteCat.value}`);
@@ -45,9 +45,9 @@ async function getQoute() {
   }
 }
 
-getQoute();
+getQuote();
 
-btnE1.addEventListener("click", getQoute);
+btnE1.addEventListener("click", getQuote);
 
 prevBtn.addEventListener("click", () => {
   if (currentIndex > 0) {
