@@ -6,7 +6,7 @@ const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 const themeToggle = document.getElementById("theme-toggle");
 
-const apiURL = "/api/quotable/random/?tags=technology";
+const apiURL = "http://api.quotable.io/random";
 
 const quoteList = [];
 let currentIndex = -1;
